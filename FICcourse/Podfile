@@ -6,6 +6,7 @@ target 'FICcourse' do
   use_frameworks!
 
   # Pods for FICcourse
+  pod 'Cartography', '~> 4.0.0'
 
   target 'FICcourseTests' do
     inherit! :search_paths

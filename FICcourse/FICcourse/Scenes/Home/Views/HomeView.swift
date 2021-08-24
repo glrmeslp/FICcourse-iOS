@@ -1,4 +1,5 @@
 import UIKit
+import Cartography
 
 class HomeView: UIView {
     
@@ -19,14 +20,9 @@ class HomeView: UIView {
     }
 
     private func setupConstraints() {
-        collection.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            collection.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor,constant: 16),
-            collection.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor),
-            collection.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
-            collection.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor)
-        ])
+        constrain(collection) { collection in
+            collection.edges == inset(collection.superview!.edges, 16, 16, 16, 16)
+        }
     }
     
     private func configureViews() {
